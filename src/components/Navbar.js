@@ -2,68 +2,8 @@ import React, { useState } from 'react';
 import { AppBar, Avatar, Badge, InputBase, Toolbar, Typography } from '@mui/material';
 import { Cancel, Mail, Search } from '@mui/icons-material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { makeStyles } from '@mui/styles';
-import { alpha } from '@mui/material/styles';
-// import { theme } from '../theme';
-import { createTheme } from "@mui/material";
+import {useStyles} from './CustomCss'
 
-const theme = createTheme({})
-
-const useStyles = makeStyles({
-    toolbar: {
-        display: 'flex',
-        justifyContent: 'space-between'
-    },
-    logoLg: {
-        display: 'none',
-        [theme.breakpoints.up('sm')]: {
-            display: 'block'
-        }
-    },
-    logoSm: {
-        display: 'block',
-        [theme.breakpoints.up('sm')]: {
-            display: 'none'
-        }
-    },
-    search: {
-        display: 'flex',
-        alignItems: 'center',
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        borderRadius: theme.shape.borderRadius,
-        width: '50%',
-        [theme.breakpoints.down('sm')] : {
-            display: (props) => (props.open ? 'flex' : 'none'),
-            width: '70%'
-        }
-    },
-    input: {
-        color: 'white',
-        marginLeft: theme.spacing(1)
-    },
-    cancel:{
-        [theme.breakpoints.up("sm")]:{
-            display: 'none'
-        }
-    },
-    searchButton : {
-        marginRight:theme.spacing(2),
-        [theme.breakpoints.up("sm")] : {
-            display: 'none',
-        }
-    },
-    icons : {
-        display: (props) => (props.open ? 'none' : 'flex'),
-        alignItems: 'center',
-    },
-    badge : {
-        marginRight:theme.spacing(2)
-    },
-    
-});
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
